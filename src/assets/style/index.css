@@ -1,0 +1,58 @@
+html:root {
+  --rc-theme-color: #1E78EB;
+
+  --rc-intro-color: #73767A;
+  --rc-window-box-blur-bgcolor: rgba(255, 255, 255, 0.6);
+
+  --rc-scrollbar-hove-bgcolor: rgba(0, 0, 0, 0.1);
+  --rc-scrollbar-thumb-bgcolor: rgba(0, 0, 0, 0.15);
+  --rc-scrollbar-thumb-hover-bgcolor: rgba(0, 0, 0, 0.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+
+  &::selection {
+    background-color: rgba(127, 127, 127, 0.2);
+  }
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.rc-scrollbar {
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+.rc-scrollbar-behavior {
+  scroll-behavior: smooth;
+}
+
+.rc-scrollbar::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+.rc-scrollbar::-webkit-scrollbar:hover {
+  cursor: default;
+  background-color: var(--rc-scrollbar-hove-bgcolor);
+}
+
+.rc-scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: var(--rc-scrollbar-thumb-bgcolor);
+}
+
+.rc-scrollbar::-webkit-scrollbar-thumb:hover {
+  cursor: default;
+  background-color: var(--rc-scrollbar-thumb-hover-bgcolor);
+}
