@@ -5,6 +5,9 @@ import ElementPlus from 'unplugin-element-plus/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  build: {
+    outDir: './docs'
+  },
   plugins: [
     vue(),
     SvgLoader(),
