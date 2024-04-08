@@ -17,15 +17,22 @@ html:root {
     background-color: rgba(127, 127, 127, 0.2);
   }
 }
-
-#app {
+body {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+#app {
+  min-width: 400px;
+  max-width: 1400px;
+}
 
 a {
   text-decoration: none;
+}
+
+ul {
+  list-style: none;
 }
 
 .rc-scrollbar {

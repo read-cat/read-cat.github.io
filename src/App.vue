@@ -15,7 +15,7 @@ router.afterEach((to, _, fail) => {
 </script>
 
 <template>
-  <ElContainer id="container" class="rc-scrollbar">
+  <ElContainer>
     <ElHeader class="header">
       <div class="logo">
         <a href="/">
@@ -27,15 +27,14 @@ router.afterEach((to, _, fail) => {
     <ElMain class="main">
       <RouterView />
     </ElMain>
-    <ElFooter></ElFooter>
+    <ElFooter class="footer">
+      <p>Released under the GPL-3.0 License.</p>
+      <p>Copyright © 2024-present Panda</p>
+    </ElFooter>
   </ElContainer>
 </template>
 
 <style scoped lang="scss">
-#container {
-  width: 100%;
-  max-width: 1400px;
-}
 .header {
   position: sticky;
   top: 0;
@@ -71,6 +70,18 @@ router.afterEach((to, _, fail) => {
 
 .main {
   padding: 0;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  border-top: 1px solid #E9E9EB;
+  height: auto;
+  font-size: 13px;
+  color: #73767a;
 }
 
 @media screen and (max-width: 990px) {
