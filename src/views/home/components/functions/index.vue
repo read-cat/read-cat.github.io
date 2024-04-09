@@ -114,10 +114,12 @@ export default {
           span {
             margin-left: 5px;
             user-select: text;
+            -webkit-user-select: text;
           }
         }
         p {
           user-select: text;
+          -webkit-user-select: text;
         }
       }
     }

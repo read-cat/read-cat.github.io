@@ -66,7 +66,6 @@ router.afterEach((to, _, fail) => {
         margin-left: 5px;
         font-weight: bold;
         color: var(--rc-theme-color);
-        user-select: none;
       }
     }
 
@@ -89,6 +88,11 @@ router.afterEach((to, _, fail) => {
   height: auto;
   font-size: 13px;
   color: #73767a;
+
+  p {
+    user-select: text;
+    -webkit-user-select: text;
+  }
 }
 
 @media screen and (max-width: 990px) {
