@@ -14,7 +14,7 @@ const { isDark } = storeToRefs(useWindowStore());
   <div>
     <div class="container-1">
       <div v-once>
-        <img src="../../assets/logo.png" alt="logo" />
+        <img src="/logo.png" alt="logo" />
         <p class="intro">一款简洁、纯净、无广告</p>
         <p class="intro">的小说阅读器</p>
         <div class="btns">

@@ -20,7 +20,7 @@ router.afterEach((to, _, fail) => {
     <ElHeader class="header">
       <div class="logo">
         <a href="/">
-          <img src="./assets/logo.png" alt="logo" />
+          <img src="/logo.png" alt="logo" />
           <span>ReadCat</span>
         </a>
       </div>
