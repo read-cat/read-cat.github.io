@@ -81,11 +81,11 @@ const { isDark } = storeToRefs(useWindowStore());
 
   div:nth-child(2) {
     width: 650px;
-
+    border-radius: 6px;
+    box-shadow: var(--rc-read-box-shadow);
+    background-color: var(--rc-read-bgcolor);
     img {
       width: 100%;
-      box-shadow: var(--rc-read-box-shadow);
-      border-radius: 6px;
     }
   }
 }
@@ -104,6 +104,7 @@ const { isDark } = storeToRefs(useWindowStore());
     div:nth-child(2) {
       width: 90%;
       min-width: 250px;
+      min-height: 200px;
     }
   }
 }

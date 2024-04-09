@@ -12,6 +12,8 @@ html:root {
   --rc-border-color: #E9E9EB;
   --rc-read-box-shadow: 0px 12px 32px 4px #E3EDCD, 0px 8px 20px rgba(227, 237, 205, 0.6);
   --rc-card-bgcolor: #F3F3F3;
+
+  --rc-read-bgcolor: #E3EDCD;
 }
 
 * {
