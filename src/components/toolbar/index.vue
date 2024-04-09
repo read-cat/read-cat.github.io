@@ -134,7 +134,6 @@ export default {
     border-radius: 12px;
     cursor: pointer;
     transition: all 0.3s ease;
-
     &:hover {
       background-color: var(--rc-button-hover-bgcolor);
     }

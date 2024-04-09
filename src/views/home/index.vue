@@ -104,7 +104,7 @@ const { isDark } = storeToRefs(useWindowStore());
     div:nth-child(2) {
       width: 90%;
       min-width: 250px;
-      min-height: 200px;
+      min-height: 150px;
     }
   }
 }

@@ -21,6 +21,7 @@ html:root {
   padding: 0;
   user-select: none;
   -webkit-user-drag: none;
+  -webkit-tap-highlight-color: transparent;
   &::selection {
     background-color: rgba(127, 127, 127, 0.2);
   }
