@@ -56,7 +56,7 @@ export default {
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: var(--rc-window-box-blur-bgcolor);
   backdrop-filter: blur(30px);
 

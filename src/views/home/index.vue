@@ -80,6 +80,9 @@ const { isDark } = storeToRefs(useWindowStore());
   }
 
   div:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 650px;
     border-radius: 6px;
     box-shadow: var(--rc-read-box-shadow);
