@@ -1,88 +1,32 @@
 <script setup lang="ts">
-import { ElButton, ElIcon } from 'element-plus';
-import IconPlugin from '../../assets/icon/icon-plugins.svg';
-import IconBookshelf from '../../assets/icon/icon-bookshelf.svg';
-import IconBookstore from '../../assets/icon/icon-bookstore.svg';
-import IconBookmark from '../../assets/icon/icon-bookmark.svg';
-import IconMore from '../../assets/icon/icon-more.svg';
+import { ElButton } from 'element-plus';
+import ReadLight from '../../assets/read-light.png';
+import ReadDark from '../../assets/read-dark.png';
+import { storeToRefs } from 'pinia';
+import { useWindowStore } from '../../store';
+import Functions from './components/functions/index.vue';
 
-
+const { isDark } = storeToRefs(useWindowStore());
 
 </script>
 
 <template>
   <div>
-    <div v-once class="container-1">
-      <div>
+    <div class="container-1">
+      <div v-once>
         <img src="../../assets/logo.png" alt="logo" />
         <p class="intro">一款简洁、纯净、无广告</p>
         <p class="intro">的小说阅读器</p>
         <div class="btns">
           <ElButton type="primary" color="#1E78EB" size="large">下载 Windows 版</ElButton>
-          <a href="">加入内测</a>
+          <RouterLink to="/insiders">加入内测</RouterLink>
         </div>
       </div>
       <div>
-        <img src="../../assets/read-light.png" alt="Read" />
+        <img v-memo="[isDark]" :src="`${isDark? ReadDark : ReadLight}`" alt="Read" />
       </div>
     </div>
-    <div class="container-2">
-      <h1>功能</h1>
-      <div class="cards">
-        <ul>
-          <li>
-            <h4>
-              <ElIcon>
-                <IconPlugin />
-              </ElIcon>
-              <span>插件</span>
-            </h4>
-            <p>插件让ReadCat拥有搜索、阅读的能力</p>
-          </li>
-          <li>
-            <h4>
-              <ElIcon>
-                <IconBookshelf />
-              </ElIcon>
-              <span>书架</span>
-            </h4>
-            <p>将您喜欢的书本加入书架吧</p>
-          </li>
-          <li>
-            <h4>
-              <ElIcon size="18">
-                <IconBookstore />
-              </ElIcon>
-              <span>书城</span>
-            </h4>
-            <p>为您推荐更多优质的小说</p>
-          </li>
-          <li>
-            <h4>
-              <ElIcon size="18">
-                <IconBookmark />
-              </ElIcon>
-              <span>书签</span>
-            </h4>
-            <p>记录您阅读小说的点点滴滴</p>
-          </li>
-          <li>
-            <h4>
-              <ElIcon size="18">
-                <IconMore />
-              </ElIcon>
-              <span>更多</span>
-            </h4>
-            <p>ReadCat不单只有这些功能，还有其他功能等你探索</p>
-          </li>
-          <li class="hide"></li>
-          <li class="hide"></li>
-          <li class="hide"></li>
-          <li class="hide"></li>
-          <li class="hide"></li>
-        </ul>
-      </div>
-    </div>
+    <Functions />
   </div>
 </template>
 
@@ -100,8 +44,10 @@ import IconMore from '../../assets/icon/icon-more.svg';
     min-width: 220px;
 
     img {
-      margin-bottom: 10px;
+      margin-bottom: 20px;
       width: 128px;
+      border-radius: 44px;
+      box-shadow: 0px 12px 32px 4px rgb(30 120 235 / 50%), 0px 8px 20px rgba(30, 120, 235, 0.08);
     }
 
     p {
@@ -138,53 +84,8 @@ import IconMore from '../../assets/icon/icon-more.svg';
 
     img {
       width: 100%;
-      box-shadow: var(--el-box-shadow);
+      box-shadow: var(--rc-read-box-shadow);
       border-radius: 5px;
-    }
-  }
-}
-
-.container-2 {
-  display: flex;
-  flex-direction: column;
-  padding: 40px;
-
-  h1 {
-    text-align: center;
-    margin-bottom: 10px;
-  }
-
-  .cards {
-    ul {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-
-      li {
-        margin: 10px;
-        padding: 10px 20px;
-        width: 260px;
-        height: 80px;
-        background-color: #F3F3F3;
-        border-radius: 10px;
-
-        &.hide {
-          padding: 0;
-          width: 300px;
-          height: 0;
-        }
-
-        h4 {
-          display: flex;
-          align-items: center;
-          margin-bottom: 5px;
-
-          span {
-            margin-left: 5px;
-          }
-        }
-      }
     }
   }
 }
@@ -202,8 +103,13 @@ import IconMore from '../../assets/icon/icon-more.svg';
 
     div:nth-child(2) {
       width: 90%;
-      min-width: 300px;
+      min-width: 250px;
     }
+  }
+}
+@media screen and (max-width: 375px) {
+  .container-1 {
+    padding: 40px 10px;
   }
 }
 </style>

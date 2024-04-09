@@ -1,3 +1,12 @@
-html:root {
-  
+html:root.dark {
+  --rc-window-box-blur-bgcolor: rgba(34, 34, 34, 0.6);
+  --rc-text-color: #AAAAB5;
+  --rc-button-hover-bgcolor: rgba(255, 255, 255, 0.17);
+  --rc-read-box-shadow: 0px 12px 32px 4px #1A1C1D, 0px 8px 20px rgba(68, 72, 74, 0.5);
+  --rc-border-color: #303133;
+  --rc-card-bgcolor: #1A1C1D;
+
+  --rc-scrollbar-hove-bgcolor: rgba(255, 255, 255, 0.2);
+  --rc-scrollbar-thumb-bgcolor: rgba(255, 255, 255, 0.3);
+  --rc-scrollbar-thumb-hover-bgcolor: rgba(255, 255, 255, 0.5);
 }

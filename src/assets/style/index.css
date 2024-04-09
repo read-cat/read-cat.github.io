@@ -1,18 +1,24 @@
 html:root {
   --rc-theme-color: #1E78EB;
 
-  --rc-intro-color: #73767A;
+  --rc-intro-color: #1E78EB;
   --rc-window-box-blur-bgcolor: rgba(255, 255, 255, 0.6);
+  --rc-button-hover-bgcolor: rgba(0, 0, 0, 0.08);
+  --rc-text-color: #2D2D2D;
 
   --rc-scrollbar-hove-bgcolor: rgba(0, 0, 0, 0.1);
   --rc-scrollbar-thumb-bgcolor: rgba(0, 0, 0, 0.15);
   --rc-scrollbar-thumb-hover-bgcolor: rgba(0, 0, 0, 0.2);
+  --rc-border-color: #E9E9EB;
+  --rc-read-box-shadow: 0px 12px 32px 4px #E3EDCD, 0px 8px 20px rgba(227, 237, 205, 0.6);
+  --rc-card-bgcolor: #F3F3F3;
 }
 
 * {
   margin: 0;
   padding: 0;
-
+  user-select: none;
+  -webkit-user-drag: none;
   &::selection {
     background-color: rgba(127, 127, 127, 0.2);
   }
@@ -23,7 +29,7 @@ body {
   align-items: center;
 }
 #app {
-  min-width: 400px;
+  width: 100%;
   max-width: 1400px;
 }
 

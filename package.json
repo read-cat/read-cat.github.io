@@ -11,12 +11,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vueuse/core": "^10.9.0",
     "element-plus": "^2.6.3",
     "pinia": "^2.1.7",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
+    "@types/dom-view-transitions": "^1.0.4",
     "@vitejs/plugin-vue": "^5.0.4",
     "sass": "^1.74.1",
     "typescript": "^5.4.4",
