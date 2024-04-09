@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ElButton } from 'element-plus';
-import ReadLight from '../../assets/read-light.png';
-import ReadDark from '../../assets/read-dark.png';
+import ReadLight from '../../assets/read-light.webp';
+import ReadDark from '../../assets/read-dark.webp';
 import { storeToRefs } from 'pinia';
 import { useWindowStore } from '../../store';
 import Functions from './components/functions/index.vue';
@@ -85,7 +85,7 @@ const { isDark } = storeToRefs(useWindowStore());
     img {
       width: 100%;
       box-shadow: var(--rc-read-box-shadow);
-      border-radius: 5px;
+      border-radius: 6px;
     }
   }
 }

@@ -10,7 +10,7 @@ router.afterEach((to, _, fail) => {
     return;
   }
   const title = document.head.querySelector('title');
-  title && (title.innerText = `${to.meta.title} | ReadCat`);
+  title && (title.innerText = (to.meta.title ? `${to.meta.title} | ` : '') + 'ReadCat');
 });
 
 </script>
