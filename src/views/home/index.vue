@@ -17,8 +17,7 @@ const { isDark } = storeToRefs(useWindowStore());
     <div class="container-1">
       <div v-once>
         <img src="/logo.png" alt="logo" />
-        <p class="intro">一款免费、开源、简洁、纯净、无广告</p>
-        <p class="intro">的小说阅读器</p>
+        <p class="intro">一款免费、开源、简洁、纯净、无广告的小说阅读器</p>
         <div class="btns">
           <ElButton type="primary" color="#1E78EB" size="large" @click="router.push('/download')">下载最新版</ElButton>
           <RouterLink to="/insiders">加入内测</RouterLink>
@@ -59,6 +58,7 @@ const { isDark } = storeToRefs(useWindowStore());
     }
 
     .intro {
+      max-width: 350px;
       color: var(--rc-intro-color);
     }
 

@@ -32,7 +32,7 @@ router.afterEach((to, _, fail) => {
       <RouterView />
       <footer class="footer">
         <p>Released under the GPL-3.0 License.</p>
-        <p>Copyright © 2024-present Panda</p>
+        <p>Copyright © 2024-present ReadCat</p>
       </footer>
     </ElMain>
     <ElBacktop target="section.rc-scrollbar" :bottom="120" :right="80" />
