@@ -16,14 +16,14 @@ router.afterEach((to, _, fail) => {
   main && (main.scrollTop = 0);
 });
 
-const backtopRight = ref(80);
+/* const backtopRight = ref(80);
 window.addEventListener('resize', () => {
   if (window.innerWidth > 900) {
     backtopRight.value = 60;
   } else {
     backtopRight.value = 20;
   }
-});
+}); */
 </script>
 
 <template>
@@ -44,7 +44,7 @@ window.addEventListener('resize', () => {
         <p>Copyright © 2024-present ReadCat</p>
       </footer>
     </ElMain>
-    <ElBacktop target="section.rc-scrollbar" :bottom="120" :right="backtopRight" />
+    <ElBacktop target="section.rc-scrollbar" :bottom="120" />
   </ElContainer>
 </template>
 
@@ -116,7 +116,9 @@ window.addEventListener('resize', () => {
   }
 }
 
-@media screen and (max-width: 990px) {
-  .header {}
+@media screen and (max-width: 900px) {
+  :deep(.el-backtop) {
+    right: 20px !important;
+  }
 }
 </style>
