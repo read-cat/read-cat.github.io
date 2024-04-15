@@ -2,6 +2,7 @@
 import { ElContainer, ElHeader, ElMain, ElBacktop } from 'element-plus';
 import { useRouter } from 'vue-router';
 import Toolbar from './components/toolbar/index.vue';
+import { ref } from 'vue';
 
 const router = useRouter();
 
@@ -15,6 +16,14 @@ router.afterEach((to, _, fail) => {
   main && (main.scrollTop = 0);
 });
 
+const backtopRight = ref(80);
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 900) {
+    backtopRight.value = 60;
+  } else {
+    backtopRight.value = 20;
+  }
+});
 </script>
 
 <template>
@@ -35,7 +44,7 @@ router.afterEach((to, _, fail) => {
         <p>Copyright © 2024-present ReadCat</p>
       </footer>
     </ElMain>
-    <ElBacktop target="section.rc-scrollbar" :bottom="120" :right="80" />
+    <ElBacktop target="section.rc-scrollbar" :bottom="120" :right="backtopRight" />
   </ElContainer>
 </template>
 
