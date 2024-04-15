@@ -7,10 +7,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc && vite build",
+    "build": "vue-tsc && vite build && node make.cjs",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@giscus/vue": "^3.0.0",
     "@vueuse/core": "^10.9.0",
     "element-plus": "^2.6.3",
     "pinia": "^2.1.7",
