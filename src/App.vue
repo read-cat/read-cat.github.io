@@ -2,7 +2,6 @@
 import { ElContainer, ElHeader, ElMain, ElBacktop } from 'element-plus';
 import { useRouter } from 'vue-router';
 import Toolbar from './components/toolbar/index.vue';
-import { ref } from 'vue';
 
 const router = useRouter();
 
