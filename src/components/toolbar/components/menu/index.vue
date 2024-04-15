@@ -59,7 +59,7 @@ export default {
   height: calc(100vh - 50px);
   background-color: var(--rc-window-box-blur-bgcolor);
   backdrop-filter: blur(30px);
-
+  z-index: 999;
   ul {
     margin-top: 10px;
     li {

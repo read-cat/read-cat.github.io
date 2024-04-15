@@ -15,14 +15,6 @@ router.afterEach((to, _, fail) => {
   main && (main.scrollTop = 0);
 });
 
-/* const backtopRight = ref(80);
-window.addEventListener('resize', () => {
-  if (window.innerWidth > 900) {
-    backtopRight.value = 60;
-  } else {
-    backtopRight.value = 20;
-  }
-}); */
 </script>
 
 <template>
