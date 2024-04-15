@@ -2,7 +2,7 @@
 import { storeToRefs } from 'pinia';
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
-import { useWindowStore } from '../../store';
+import { useWindowStore } from '../../store/window';
 import IconSun from '../../assets/icon/icon-sun.svg';
 import IconMoon from '../../assets/icon/icon-moon.svg';
 import IconGithub from '../../assets/icon/icon-github.svg';
@@ -48,7 +48,7 @@ export default {
 </script>
 <template>
   <div class="toolbar">
-    <nav>
+    <nav v-memo="[currentNavSelected]">
       <ul>
         <li :class="[currentNavSelected === 'home' ? 'selected' : '']">
           <RouterLink to="/">首页</RouterLink>
@@ -72,12 +72,12 @@ export default {
         <IconMoon style="color: #5553B9;" />
       </ElIcon>
     </div>
-    <a href="https://github.com/read-cat/read-cat" target="_blank" class="github-btn">
-      <ElIcon>
+    <a v-once href="https://github.com/read-cat/read-cat" target="_blank" class="github-btn">
+      <ElIcon size="18">
         <IconGithub />
       </ElIcon>
     </a>
-    <div class="menu-btn" @click="showMenu = !showMenu">
+    <div v-memo="[showMenu]" class="menu-btn" @click="showMenu = !showMenu">
       <ElIcon v-if="!showMenu">
         <IconMoreMenu />
       </ElIcon>

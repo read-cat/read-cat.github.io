@@ -14,6 +14,9 @@ html:root {
   --rc-card-bgcolor: #F3F3F3;
 
   --rc-read-bgcolor: #E3EDCD;
+
+  --rc-qrcode-bgcolor: #FFFFFF;
+  --rc-qrcode-border-color: #F1F1F1;
 }
 
 * {
@@ -27,14 +30,9 @@ html:root {
     background-color: rgba(127, 127, 127, 0.2);
   }
 }
+
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-#app {
-  width: 100%;
-  max-width: 1400px;
+  font-family: 'HarmonyOS Sans', 'PingFang SC', 'Microsoft YaHei', Arial, Helvetica, sans-serif;
 }
 
 a {

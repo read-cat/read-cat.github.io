@@ -10,4 +10,8 @@ html:root.dark {
   --rc-scrollbar-thumb-bgcolor: rgba(255, 255, 255, 0.3);
   --rc-scrollbar-thumb-hover-bgcolor: rgba(255, 255, 255, 0.5);
   --rc-read-bgcolor: #1A1C1D;
+
+  
+  --rc-qrcode-bgcolor: #262626;
+  --rc-qrcode-border-color: #444444;
 }

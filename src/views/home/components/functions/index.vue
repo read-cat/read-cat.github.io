@@ -5,6 +5,7 @@ import IconBookshelf from '../../../../assets/icon/icon-bookshelf.svg';
 import IconBookstore from '../../../../assets/icon/icon-bookstore.svg';
 import IconBookmark from '../../../../assets/icon/icon-bookmark.svg';
 import IconMore from '../../../../assets/icon/icon-more.svg';
+import IconReadAloud from '../../../../assets/icon/icon-read-aloud.svg';
 </script>
 <script lang="ts">
 export default {
@@ -25,7 +26,7 @@ export default {
               </ElIcon>
               <span>插件</span>
             </h4>
-            <p>插件让ReadCat拥有搜索、阅读的能力</p>
+            <p>插件让ReadCat拥有搜索、阅读、朗读的能力</p>
           </li>
           <li>
             <h4>
@@ -53,6 +54,15 @@ export default {
               <span>书签</span>
             </h4>
             <p>记录您阅读小说的点点滴滴</p>
+          </li>
+          <li>
+            <h4>
+              <ElIcon size="18">
+                <IconReadAloud />
+              </ElIcon>
+              <span>朗读</span>
+            </h4>
+            <p>看书看久了偶尔听听书也是一种享受</p>
           </li>
           <li>
             <h4>
