@@ -10,12 +10,10 @@ const { isDark } = storeToRefs(useWindowStore());
   <div id="plugin-giscus">
     <Giscus
       id="plugin-comments"
-      repo="pot-app/pot-desktop"
-      repoId="R_kgDOJCp3Ww"
-      category="General"
-      categoryId="DIC_kwDOJCp3W84CUrQM"
+      repo="read-cat/read-cat"
+      repoId="R_kgDOLraubQ"
       mapping="number"
-      term="627"
+      term="2"
       strict="0"
       reactionsEnabled="1"
       emitMetadata="0"
