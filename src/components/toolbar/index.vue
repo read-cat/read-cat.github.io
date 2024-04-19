@@ -165,6 +165,15 @@ export default {
       display: none;
     }
 
+
+    .theme-btn,
+    .github-btn,
+    .menu-btn {
+      &:hover {
+        background-color: transparent;
+      }
+    }
+
     .menu-btn {
       display: flex;
     }
