@@ -11,7 +11,7 @@ const downloads = [{
   icon: 'https://img.alicdn.com/imgextra/i1/O1CN01JDQCi21Dc8EfbRwvF_!!6000000000236-73-tps-64-64.ico',
   url: 'https://www.alipan.com/s/Cfdf3RMqorm'
 }, {
-  title: '123云盘',
+  title: '123云盘<br>(插件、Linux、MacOS、Windows)',
   icon: 'https://statics.123pan.com/static/favicon.ico',
   url: 'https://www.123pan.com/s/OwzA-UoGsd.html'
 }];
@@ -21,22 +21,21 @@ const { isDark } = storeToRefs(useWindowStore());
 <template>
   <div class="insiders">
     <h2>欢迎您加入ReadCat内测</h2>
-    <p>暂时只支持Windows(>=10)平台, 后续逐步发放Linux、MacOS版</p>
+    <p>支持Windows(>=10)、Linux、MacOS(darwin)平台</p>
     <div class="downloads">
       <p>下载内测版:</p>
       <ElTable border :data="downloads" :show-header="false">
-        <ElTableColumn width="140">
+        <ElTableColumn>
           <template #default="{ row }">
             <div class="title">
               <ElImage :src="row.icon" style="width: 20px;height: 20px;" fit="cover" />
-              <span>{{ row.title }}</span>
+              <span v-html="row.title"></span>
             </div>
           </template>
         </ElTableColumn>
         <ElTableColumn>
           <template #default="{ row }">
             <div class="url">
-              <!-- <a :href="row.url" target="_blank">{{ row.url }}</a> -->
               <ElLink :href="row.url" target="_blank">{{ row.url }}</ElLink>
             </div>
           </template>
@@ -61,7 +60,7 @@ const { isDark } = storeToRefs(useWindowStore());
 <style scoped lang="scss">
 .insiders {
   margin: 40px;
-  max-width: 500px;
+  max-width: 800px;
   color: var(--rc-text-color);
 
   a {
@@ -79,7 +78,9 @@ const { isDark } = storeToRefs(useWindowStore());
       align-items: center;
 
       span {
+        display: inline-block;
         margin-left: 5px;
+        max-width: 220px;
       }
     }
 
@@ -129,7 +130,19 @@ const { isDark } = storeToRefs(useWindowStore());
   }
 }
 
-@media screen and (max-width: 990px) {}
+@media screen and (max-width: 450px) {
+  .insiders {
+    .downloads {
+      .title {
+        span {
+          max-width: 80px;
+        }
+      }
+    }
+  }
+}
 
-@media screen and (max-width: 375px) {}
+@media screen and (max-width: 375px) {
+  
+}
 </style>
