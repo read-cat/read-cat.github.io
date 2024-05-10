@@ -2,6 +2,7 @@
 import { ElContainer, ElHeader, ElMain, ElBacktop } from 'element-plus';
 import { useRouter } from 'vue-router';
 import Toolbar from './components/toolbar/index.vue';
+import { nextTick } from 'vue';
 
 const router = useRouter();
 
@@ -11,8 +12,10 @@ router.afterEach((to, _, fail) => {
   }
   const title = document.head.querySelector('title');
   title && (title.innerText = (to.meta.title ? `${to.meta.title} | ` : '') + 'ReadCat');
-  const main = document.querySelector<HTMLElement>('main.main');
-  main && (main.scrollTop = 0);
+  nextTick(() => {
+    const main = document.querySelector<HTMLElement>('main.main');
+    main && (main.scrollTop = 0);
+  })
 });
 
 </script>
