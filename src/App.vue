@@ -13,8 +13,8 @@ router.afterEach((to, _, fail) => {
   const title = document.head.querySelector('title');
   title && (title.innerText = (to.meta.title ? `${to.meta.title} | ` : '') + 'ReadCat');
   nextTick(() => {
-    const main = document.querySelector<HTMLElement>('main.main');
-    main && (main.scrollTop = 0);
+    const container = document.querySelector<HTMLElement>('#container');
+    container && (container.scrollTop = 0);
   })
 });
 
