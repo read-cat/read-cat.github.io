@@ -7,10 +7,6 @@ import QRCode from '../../assets/qrcode.webp';
 import QRCodeDark from '../../assets/qrcode-dark.webp';
 
 const downloads = [{
-  title: '阿里云盘',
-  icon: 'https://img.alicdn.com/imgextra/i1/O1CN01JDQCi21Dc8EfbRwvF_!!6000000000236-73-tps-64-64.ico',
-  url: 'https://www.alipan.com/s/Cfdf3RMqorm'
-}, {
   title: '123云盘<br>(插件、Linux、MacOS、Windows)',
   icon: 'https://statics.123pan.com/static/favicon.ico',
   url: 'https://www.123pan.com/s/OwzA-UoGsd.html'
