@@ -5,6 +5,8 @@ import { storeToRefs } from 'pinia';
 import { useWindowStore } from '../../store/window';
 import QRCode from '../../assets/qrcode.webp';
 import QRCodeDark from '../../assets/qrcode-dark.webp';
+import QRCode1 from '../../assets/qrcode-1.webp';
+import QRCode1Dark from '../../assets/qrcode-1-dark.webp';
 
 const downloads = [{
   title: '123云盘<br>(插件、Linux、MacOS、Windows)',
@@ -14,6 +16,24 @@ const downloads = [{
   title: 'Github',
   icon: 'data:image/svg+xml;charset=utf-8;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNiAwQzcuMTYgMCAwIDcuMTYgMCAxNkMwIDIzLjA4IDQuNTggMjkuMDYgMTAuOTQgMzEuMThDMTEuNzQgMzEuMzIgMTIuMDQgMzAuODQgMTIuMDQgMzAuNDJDMTIuMDQgMzAuMDQgMTIuMDIgMjguNzggMTIuMDIgMjcuNDRDOCAyOC4xOCA2Ljk2IDI2LjQ2IDYuNjQgMjUuNTZDNi40NiAyNS4xIDUuNjggMjMuNjggNSAyMy4zQzQuNDQgMjMgMy42NCAyMi4yNiA0Ljk4IDIyLjI0QzYuMjQgMjIuMjIgNy4xNCAyMy40IDcuNDQgMjMuODhDOC44OCAyNi4zIDExLjE4IDI1LjYyIDEyLjEgMjUuMkMxMi4yNCAyNC4xNiAxMi42NiAyMy40NiAxMy4xMiAyMy4wNkM5LjU2IDIyLjY2IDUuODQgMjEuMjggNS44NCAxNS4xNkM1Ljg0IDEzLjQyIDYuNDYgMTEuOTggNy40OCAxMC44NkM3LjMyIDEwLjQ2IDYuNzYgOC44MiA3LjY0IDYuNjJDNy42NCA2LjYyIDguOTggNi4yIDEyLjA0IDguMjZDMTMuMzIgNy45IDE0LjY4IDcuNzIgMTYuMDQgNy43MkMxNy40IDcuNzIgMTguNzYgNy45IDIwLjA0IDguMjZDMjMuMSA2LjE4IDI0LjQ0IDYuNjIgMjQuNDQgNi42MkMyNS4zMiA4LjgyIDI0Ljc2IDEwLjQ2IDI0LjYgMTAuODZDMjUuNjIgMTEuOTggMjYuMjQgMTMuNCAyNi4yNCAxNS4xNkMyNi4yNCAyMS4zIDIyLjUgMjIuNjYgMTguOTQgMjMuMDZDMTkuNTIgMjMuNTYgMjAuMDIgMjQuNTIgMjAuMDIgMjYuMDJDMjAuMDIgMjguMTYgMjAgMjkuODggMjAgMzAuNDJDMjAgMzAuODQgMjAuMyAzMS4zNCAyMS4xIDMxLjE4QzI3LjQyIDI5LjA2IDMyIDIzLjA2IDMyIDE2QzMyIDcuMTYgMjQuODQgMCAxNiAwVjBaIiBmaWxsPSIjMjQyOTJFIi8+Cjwvc3ZnPg==',
   url: 'https://github.com/read-cat/read-cat/releases'
+}];
+
+const qqs = [{
+  title: '内测交流群',
+  code: '903473975',
+  link: 'https://qm.qq.com/q/y5yIM9MIkE',
+  image: {
+    light: QRCode,
+    dark: QRCodeDark
+  }
+}, {
+  title: '内测交流群1',
+  code: '959115174',
+  link: 'https://qm.qq.com/q/qKuY7T8Wu6',
+  image: {
+    light: QRCode1,
+    dark: QRCode1Dark
+  }
 }];
 
 const { isDark } = storeToRefs(useWindowStore());
@@ -43,10 +63,12 @@ const { isDark } = storeToRefs(useWindowStore());
       </ElTable>
     </div>
     <div class="discussion">
-      <div class="qq">
-        <p>内测交流群(群号：<ElLink href="https://qm.qq.com/q/y5yIM9MIkE" target="_blank">903473975</ElLink>)</p>
-        <div class="qrcode">
-          <img :src="isDark ? QRCodeDark : QRCode" alt="QQ群二维码" width="200px" />
+      <div class="qqs">
+        <div v-for="qq of qqs" class="qq">
+          <p>{{ qq.title }}(群号：<ElLink :href="qq.link" target="_blank">{{ qq.code }}</ElLink>)</p>
+          <div class="qrcode">
+            <img :src="isDark ? qq.image.dark : qq.image.light" alt="QQ群二维码" width="200px" />
+          </div>
         </div>
       </div>
       <div class="github">
@@ -87,6 +109,7 @@ const { isDark } = storeToRefs(useWindowStore());
     :deep(.el-link) {
       justify-content: flex-start;
       max-width: 100%;
+
       .el-link__inner {
         display: inline-block;
         max-width: 100%;
@@ -98,22 +121,32 @@ const { isDark } = storeToRefs(useWindowStore());
   .discussion {
     margin-top: 15px;
 
-    .qq {
-      p {
-        display: flex;
-      }
-      .qrcode {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 10px;
-        width: 220px;
-        height: 220px;
-        border-radius: 10px;
-        border: 2px solid var(--rc-qrcode-border-color);
-        background-color: var(--rc-qrcode-bgcolor);
-      }
+    .qqs {
+      display: flex;
+      flex-wrap: wrap;
 
+      .qq {
+        margin-right: 10px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+        p {
+          display: flex;
+        }
+
+        .qrcode {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 10px;
+          width: 220px;
+          height: 220px;
+          border-radius: 10px;
+          border: 2px solid var(--rc-qrcode-border-color);
+          background-color: var(--rc-qrcode-bgcolor);
+        }
+      }
     }
 
     .github {
@@ -142,7 +175,5 @@ const { isDark } = storeToRefs(useWindowStore());
   }
 }
 
-@media screen and (max-width: 375px) {
-  
-}
+@media screen and (max-width: 375px) {}
 </style>
