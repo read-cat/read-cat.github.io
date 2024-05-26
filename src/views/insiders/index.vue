@@ -9,7 +9,7 @@ import QRCode1 from '../../assets/qrcode-1.webp';
 import QRCode1Dark from '../../assets/qrcode-1-dark.webp';
 
 const downloads = [{
-  title: '123云盘<br>(插件、Linux、MacOS、Windows)',
+  title: '123云盘(已停止更新最新版本)<br>(插件、Linux、MacOS、Windows)',
   icon: 'https://statics.123pan.com/static/favicon.ico',
   url: 'https://www.123pan.com/s/OwzA-UoGsd.html'
 }, {
