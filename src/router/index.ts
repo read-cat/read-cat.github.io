@@ -33,6 +33,14 @@ const routes: Array<RouteRecordRaw> = [
     },
     component: () => import('../views/insiders/index.vue')
   },
+  {
+    path: '/dev',
+    name: 'dev',
+    meta: {
+      title: '插件开发文档'
+    },
+    component: () => import('../views/dev/index.vue')
+  },
 
 ];
 

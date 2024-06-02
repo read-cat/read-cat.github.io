@@ -8,26 +8,26 @@ import IconMoon from '../../assets/icon/icon-moon.svg';
 import IconGithub from '../../assets/icon/icon-github.svg';
 import IconMoreMenu from '../../assets/icon/icon-more-menu.svg';
 import IconClose from '../../assets/icon/icon-close.svg';
-import { ElIcon } from 'element-plus';
+import { ElIcon, ElMessage } from 'element-plus';
 import { useToggle } from '@vueuse/core';
 import Menu from './components/menu/index.vue';
 
-
 const router = useRouter();
 const currentNavSelected = ref('');
-router.afterEach((to, _, fail) => {
-  if (fail) {
+const { isDark } = storeToRefs(useWindowStore());
+const toggle = (val?: boolean) => {
+  if (currentNavSelected.value === 'dev') {
+    ElMessage.warning('该页面不支持夜间模式');
     return;
   }
-  currentNavSelected.value = String(to.name);
-});
-
-const { isDark } = storeToRefs(useWindowStore());
-const toggle = () => {
   const _toggle = useToggle(isDark);
   if (document.startViewTransition !== void 0) {
     document.startViewTransition(() => {
-      _toggle();
+      if (val !== void 0) {
+        _toggle(val);
+      } else {
+        _toggle();
+      }
     }).ready.then(() => {
       document.documentElement.animate(null, {
         duration: 300,
@@ -35,9 +35,23 @@ const toggle = () => {
       });
     });
   } else {
-    _toggle();
+    if (val !== void 0) {
+      _toggle(val);
+    } else {
+      _toggle();
+    }
   }
 }
+
+router.afterEach((to, _, fail) => {
+  if (fail) {
+    return;
+  }
+  if (to.name === 'dev') {
+    toggle(false);
+  }
+  currentNavSelected.value = String(to.name);
+});
 
 const showMenu = ref(false);
 </script>
@@ -56,6 +70,9 @@ export default {
         <li :class="[currentNavSelected === 'plugin' ? 'selected' : '']">
           <RouterLink to="/plugin">插件</RouterLink>
         </li>
+        <!-- <li :class="[currentNavSelected === 'dev' ? 'selected' : '']">
+          <RouterLink to="/dev">开发</RouterLink>
+        </li> -->
         <li :class="[currentNavSelected === 'download' ? 'selected' : '']">
           <RouterLink to="/download">下载</RouterLink>
         </li>
@@ -102,6 +119,7 @@ export default {
         margin-right: 5px;
         color: var(--rc-text-color);
         transition: color 0.3s ease;
+
         &:last-child {
           margin-right: 0;
         }
@@ -134,6 +152,7 @@ export default {
     border-radius: 12px;
     cursor: pointer;
     transition: all 0.3s ease;
+
     &:hover {
       background-color: var(--rc-button-hover-bgcolor);
     }
@@ -142,8 +161,6 @@ export default {
       transform: scale(0.85);
     }
   }
-
-  .theme-btn {}
 
   .menu-btn,
   .github-btn {
@@ -155,9 +172,7 @@ export default {
   }
 }
 
-@media screen and (max-width: 990px) {
-  
-}
+@media screen and (max-width: 990px) {}
 
 @media screen and (max-width: 550px) {
   .toolbar {
