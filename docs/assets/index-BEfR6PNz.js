@@ -1,0 +1,1 @@
+import{J as o,o as c,k as s,H as t,I as d,C as a}from"./index-wL999_jY.js";const r={},_=e=>(t("data-v-407fe13e"),e=e(),d(),e),n={id:"plugin-dev"},p=_(()=>a("iframe",{src:"https://docs.qq.com/doc/DQUZOQ3BLeWNrRFFp",frameborder:"0"},null,-1)),i=[p];function f(e,h){return c(),s("div",n,i)}const m=o(r,[["render",f],["__scopeId","data-v-407fe13e"]]);export{m as default};
