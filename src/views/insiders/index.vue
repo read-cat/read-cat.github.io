@@ -3,14 +3,16 @@ import { ElTable, ElTableColumn, ElImage, ElLink } from 'element-plus';
 import IconGithub from '../../assets/icon/icon-github.svg';
 import { storeToRefs } from 'pinia';
 import { useWindowStore } from '../../store/window';
-import QRCode from '../../assets/qrcode.jpg';
-import QRCodeDark from '../../assets/qrcode-dark.jpg';
-import QRCode1 from '../../assets/qrcode-1.jpg';
-import QRCode1Dark from '../../assets/qrcode-1-dark.jpg';
-import QRCode2 from '../../assets/qrcode-2.jpg';
-import QRCode2Dark from '../../assets/qrcode-2-dark.jpg';
-import QRCode3 from '../../assets/qrcode-3.jpg';
-import QRCode3Dark from '../../assets/qrcode-3-dark.jpg';
+import QRCode from '../../assets/qrcode.webp';
+import QRCodeDark from '../../assets/qrcode-dark.webp';
+import QRCode1 from '../../assets/qrcode-1.webp';
+import QRCode1Dark from '../../assets/qrcode-1-dark.webp';
+import QRCode2 from '../../assets/qrcode-2.webp';
+import QRCode2Dark from '../../assets/qrcode-2-dark.webp';
+import QRCode3 from '../../assets/qrcode-3.webp';
+import QRCode3Dark from '../../assets/qrcode-3-dark.webp';
+import QRCode4 from '../../assets/qrcode-4.webp';
+import QRCode4Dark from '../../assets/qrcode-4-dark.webp';
 
 const downloads = [{
   title: '123云盘(已停止更新最新版本)<br>(插件、Linux、MacOS、Windows)',
@@ -53,6 +55,14 @@ const qqs = [{
   image: {
     light: QRCode3,
     dark: QRCode3Dark
+  }
+}, {
+  title: '内测交流群4',
+  code: '192080442',
+  link: 'https://qm.qq.com/q/S206kI5EgC',
+  image: {
+    light: QRCode4,
+    dark: QRCode4Dark
   }
 }];
 
